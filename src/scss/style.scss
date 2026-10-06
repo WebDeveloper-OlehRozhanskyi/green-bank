@@ -1,11 +1,1 @@
-@import "./components/normalize";
-@import "./components/fonts";
-@import "./components/mixin";
-@import "./components/settings";
-@import "./components/function";
-@import "./components/general";
-@import "./components/header";
-@import "./components/page";
-@import "./components/footer";
-@import "./components/accordion";
-@import "./components/modal";
+@use 'components/index' as *;

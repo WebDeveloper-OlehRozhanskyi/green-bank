@@ -1,0 +1,21 @@
+@use '../foundation' as *;
+
+.faqs {
+ // .faqs__container
+ &__container {
+  @include container;
+
+  max-width: rem(1020);
+ }
+
+ // .faqs__title
+ &__title {
+  margin-bottom: clamp(rem(32), vw(64, $t), rem(64));
+  text-align: center;
+ }
+
+ // .faqs__list
+ &__list {
+  @include list;
+ }
+}

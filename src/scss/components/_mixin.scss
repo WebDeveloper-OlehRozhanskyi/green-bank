@@ -1,96 +1,166 @@
-$canvas: 1440px;
-$container: 1240px;
+@use 'sass:math';
+@use 'variables' as *;
+@use 'functions' as *;
+@use 'root' as *;
+
+@mixin small-mobile {
+ @media (width <= rem($small-mobile)) {
+  @content;
+ }
+}
+
+@mixin xxsm {
+ @media (width <= rem($xxsm)) {
+  @content;
+ }
+}
 
 @mixin xsm {
-	@media (width <= 424.98px) {
-		@content;
-	}
+ @media (width <= rem($xsm)) {
+  @content;
+ }
 }
 
 @mixin sm {
-	@media (width <= 574.98px) {
-		@content;
-	}
+ @media (width <= rem($sm)) {
+  @content;
+ }
 }
 
 @mixin m {
-	@media (width <= 767.98px) {
-		@content;
-	}
+ @media (width <= rem($m)) {
+  @content;
+ }
+}
+
+@mixin mobile {
+ @media (width <= rem($mobile)) {
+  @content;
+ }
+}
+
+@mixin bm {
+ @media (width <= rem($bm)) {
+  @content;
+ }
 }
 
 @mixin st {
-	@media (width <= 959.98px) {
-		@content;
-	}
+ @media (width <= rem($st)) {
+  @content;
+ }
 }
 
 @mixin t {
-	@media (width <= 1023.98px) {
-		@content;
-	}
+ @media (width <= rem($t)) {
+  @content;
+ }
 }
 
 @mixin bt {
-	@media (width <= 1199.98px) {
-		@content;
-	}
+ @media (width <= rem($bt)) {
+  @content;
+ }
 }
 
-@mixin d {
-	@media (width <= $container) {
-		@content;
-	}
+@mixin l {
+ @media (width <= rem($l)) {
+  @content;
+ }
 }
 
-@mixin canvas {
-	@media (width <= $canvas) {
-		@content;
-	}
+@mixin desktop {
+ @media (width <= rem($desktop)) {
+  @content;
+ }
 }
 
 @mixin container {
-	max-width: calc($container + var(--padding-inline) * 2);
-	margin: 0 auto;
-	padding-inline: var(--padding-inline);
-	@content;
+ max-width: calc(#{rem($container)} + var(--padding-inline) * 2);
+ padding-inline: var(--padding-inline);
+ margin-inline: auto;
+ @content;
 }
 
 @mixin hover {
-	&::before {
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		width: 100%;
-		height: 2px;
-		background-color: var(--brand-color);
-		transform: translateX(-50%) scale(0);
-		transition: transform var(--transition);
-		content: "";
-	}
-
-	&:hover::before {
-		@media (any-hover) {
-			transform: translateX(-50%) scale(1);
-		}
-	}
-	@content;
-}
-
-/* 
-@mixin focus {
- 	@content;
- 	&:focus-visible {
- 		color: var(--black);
- 	}
+ @media (hover: hover) and (pointer: fine) {
+  &:hover {
+   @content;
+  }
  }
-/*
 
-/*
-@mixin active {
-	@content;
-	&:active {
-			color: var(--black);
-	}
+ &:focus-visible {
+  @content;
+ }
 }
-*/
+
+// лінія під посиланням, що розходиться від центру
+@mixin hover-line {
+ &::before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: rem(2);
+  background-color: var(--brand-color);
+  transform: translateX(-50%) scale(0);
+  transition: transform var(--transition);
+  content: '';
+ }
+
+ @include hover {
+  &::before {
+   transform: translateX(-50%) scale(1);
+  }
+ }
+}
+
+@mixin fluid-text(
+ $min: 16,
+ $max: 48,
+ $min-viewport: $small-mobile,
+ $max-viewport: $desktop
+) {
+ $max-viewport-width: $max-viewport;
+ $min-viewport-width: $min-viewport;
+ $max-size: math.div($max, 16);
+ $min-size: math.div($min, 16);
+ $max-width: math.div($max-viewport-width, 16);
+ $min-width: math.div($min-viewport-width, 16);
+ $slope: math.div(($max-size - $min-size), ($max-width - $min-width));
+ $y-axis-intersection: -$min-width * $slope + $min-size;
+
+ font-size: clamp(
+  #{$min-size * 1rem},
+  #{$y-axis-intersection * 1rem} + #{$slope * 100vw},
+  #{$max-size * 1rem}
+ );
+}
+
+// $retina: false — для 1x-джерела без @2x (genFormats створює лише webp/avif)
+@mixin bg-image-set($base, $ext: 'jpg', $retina: true) {
+ $type: if($ext == 'png', 'png', 'jpeg');
+
+ background-image: url('#{$base}.#{$ext}');
+
+ @if $retina {
+  background-image: image-set(
+   url('#{$base}.avif') type('image/avif') 1x,
+   url('#{$base}@2x.avif') type('image/avif') 2x,
+   url('#{$base}.webp') type('image/webp') 1x,
+   url('#{$base}@2x.webp') type('image/webp') 2x,
+   url('#{$base}.#{$ext}') type('image/#{$type}') 1x,
+   url('#{$base}@2x.#{$ext}') type('image/#{$type}') 2x
+  );
+ } @else {
+  background-image: image-set(
+   url('#{$base}.avif') type('image/avif'),
+   url('#{$base}.webp') type('image/webp'),
+   url('#{$base}.#{$ext}') type('image/#{$type}')
+  );
+ }
+
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}

@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en" class="html">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+   rel="apple-touch-icon"
+   sizes="180x180"
+   href="/favicon/apple-touch-icon.png" />
+  <link
+   rel="icon"
+   type="image/png"
+   sizes="32x32"
+   href="/favicon/favicon-32x32.png" />
+  <link
+   rel="icon"
+   type="image/png"
+   sizes="16x16"
+   href="/favicon/favicon-16x16.png" />
+  <title>Green Bank</title>
+ </head>
+ <body class="body">
+  <div class="wrapper">
+   <header class="header">
+    <div class="header__container">
+     <a class="header__logo logo">
+      <img
+       class="logo__img"
+       src="./src/images/common/header-logo.svg"
+       alt=""
+       width="24"
+       height="24" />
+      <span class="logo__span">GreenBank</span>
+     </a>
+     <nav class="header__menu menu">
+      <ul class="menu__list">
+       <li class="menu__item">
+        <a href="#" class="menu__link">Why Us</a>
+       </li>
+       <li class="menu__item">
+        <a href="#" class="menu__link">Services</a>
+       </li>
+       <li class="menu__item">
+        <a href="#" class="menu__link">Our Process</a>
+       </li>
+       <li class="menu__item">
+        <a href="#" class="menu__link">Payments</a>
+       </li>
+       <li class="menu__item">
+        <a href="#" class="menu__link">FAQs</a>
+       </li>
+      </ul>
+      <button
+       class="header__button header__button--menu"
+       type="button"
+       data-modal-open-btn="modal-1"
+       aria-expanded="false">
+       <span class="visually-hidden">open modal window</span>
+       Contact
+      </button>
+     </nav>
+     <div class="header__active">
+      <button
+       class="header__button"
+       type="button"
+       data-modal-open-btn="modal-1"
+       aria-expanded="false">
+       <span class="visually-hidden">open modal window</span>
+       Contact
+      </button>
+      <!-- <button class="header__button" type="button" data-modal-open-btn="modal-2" aria-expanded="false"><span class="visually-hidden">open modal window</span>Contact</button> -->
+      <button class="burger-btn" type="button" aria-expanded="false">
+       <span class="visually-hidden">open menu</span>
+       <span></span>
+      </button>
+     </div>
+    </div>
+   </header>
+   <main class="main">
+    <section class="main__banner banner">
+     <div class="banner__container">
+      <div class="banner__text-block">
+       <h1 class="banner__title">Discover the Perfect Credit Card for You</h1>
+       <p class="banner__text">
+        Discover the power of our secure and rewarding credit cards. Explore our
+        range of credit cards and take control of your finances today.
+       </p>
+       <button
+        class="banner__button button"
+        type="button"
+        data-modal-open-btn="modal-1"
+        aria-expanded="false">
+        <span class="visually-hidden">open modal window</span>
+        Get Started
+       </button>
+       <div class="banner__users-block users-banner">
+        <div class="users-banner__block-img">
+         <img
+          class="users-banner__img"
+          src="./src/images/avatars/avatar-1.png"
+          alt=""
+          width="48"
+          height="48" />
+         <img
+          class="users-banner__img"
+          src="./src/images/avatars/avatar-2.png"
+          alt=""
+          width="48"
+          height="48" />
+         <img
+          class="users-banner__img"
+          src="./src/images/avatars/avatar-3.png"
+          alt=""
+          width="48"
+          height="48" />
+        </div>
+        <span class="users-banner__number">10.2k+</span>
+        <span class="users-banner__text">Active users around the wordls</span>
+       </div>
+      </div>
+      <div class="banner__card-block card" aria-hidden="true">
+       <div class="card__decor"></div>
+       <svg
+        aria-hidden="true"
+        role="img"
+        class="card__decor-master-card"
+        width="60"
+        height="35">
+        <use href="#icon-master-card"></use>
+       </svg>
+       <svg
+        aria-hidden="true"
+        role="img"
+        class="card__decor-nfs"
+        width="27"
+        height="47">
+        <use href="#icon-nfs"></use>
+       </svg>
+       <svg
+        aria-hidden="true"
+        role="img"
+        class="card__decor-chip"
+        width="59"
+        height="48">
+        <use href="#icon-chip"></use>
+       </svg>
+       <span class="card__text-number">
+        Credit Card No.
+        <span class="emergence" style="--i: 1"></span>
+       </span>
+       <div class="card__block-number">
+        <span class="card__number">
+         1602
+         <span class="emergence" style="--i: 2"></span>
+        </span>
+        <span class="card__number">
+         0911
+         <span class="emergence" style="--i: 3"></span>
+        </span>
+        <span class="card__number">
+         2019
+         <span class="emergence" style="--i: 4"></span>
+        </span>
+        <span class="card__number">
+         2021
+         <span class="emergence" style="--i: 5"></span>
+        </span>
+       </div>
+       <div class="card__block-text">
+        <span class="card__text">
+         Name
+         <span class="emergence" style="--i: 6"></span>
+        </span>
+        <span class="card__text">
+         Exp.
+         <span class="emergence" style="--i: 7"></span>
+        </span>
+        <span class="card__name">
+         OLEH ROZHANSKYI
+         <span class="emergence" style="--i: 8"></span>
+        </span>
+        <span class="card__date">
+         09/11
+         <span class="emergence" style="--i: 9"></span>
+        </span>
+       </div>
+      </div>
+      <img
+       class="banner__img-card"
+       src="./src/images/banner/credit-card.svg"
+       alt="image bank card"
+       width="552"
+       height="349" />
+     </div>
+    </section>
+    <section class="main__about about">
+     <div class="about__container">
+      <h2 class="visually-hidden">about us</h2>
+      <ul class="about__list">
+       <li class="about__li">
+        <span class="about__span-list">16y</span>
+        <h3 class="about__title-list">Experience</h3>
+       </li>
+       <li class="about__li">
+        <span class="about__span-list">250+</span>
+        <h3 class="about__title-list">Merchant Partner</h3>
+       </li>
+       <li class="about__li">
+        <span class="about__span-list">18+</span>
+        <h3 class="about__title-list">Years Experience</h3>
+       </li>
+       <li class="about__li">
+        <span class="about__span-list">10.2k+</span>
+        <h3 class="about__title-list">Worldwide Clients</h3>
+       </li>
+      </ul>
+     </div>
+    </section>
+    <section class="main__slider slider">
+     <div class="slider__container">
+      <h2 class="visually-hidden">our partners</h2>
+      <ul class="slider__list">
+       <li class="slider__li">
+        <img
+         class="slider__img"
+         src="./src/images/slider/upwork.svg"
+         alt="logo upwork" />
+       </li>
+       <li class="slider__li">
+        <img
+         class="slider__img"
+         src="./src/images/slider/petal.svg"
+         alt="logo petal" />
+       </li>
+       <li class="slider__li">
+        <img
+         class="slider__img"
+         src="./src/images/slider/rakuten.svg"
+         alt="logo rakuten" />
+       </li>
+       <li class="slider__li">
+        <img
+         class="slider__img"
+         src="./src/images/slider/nytimes.svg"
+         alt="logo the new york times" />
+       </li>
+       <li class="slider__li">
+        <img
+         class="slider__img"
+         src="./src/images/slider/vice.svg"
+         alt="logo vice" />
+       </li>
+       <li class="slider__li">
+        <img
+         class="slider__img"
+         src="./src/images/slider/dell.svg"
+         alt="logo dell" />
+       </li>
+      </ul>
+     </div>
+    </section>
+    <section class="main__offer offer">
+     <div class="offer__container">
+      <h2 class="offer__title title">What do we offer?</h2>
+      <ul class="offer__list">
+       <li class="offer__li offer__li--security">
+        <h3 class="offer__title-list">Security Guarantee</h3>
+        <span class="offer__text-list">
+         Your data and funds will be securely protected.
+        </span>
+       </li>
+       <li class="offer__li offer__li--pie">
+        <h3 class="offer__title-list">Investing</h3>
+        <span class="offer__text-list">
+         Your data and funds will be securely protected.
+        </span>
+       </li>
+       <li class="offer__li offer__li--rectangle">
+        <h3 class="offer__title-list">Multiple Method</h3>
+        <span class="offer__text-list">
+         Your data and funds will be securely protected.
+        </span>
+       </li>
+      </ul>
+     </div>
+    </section>
+    <section class="main__design design">
+     <div class="design__container">
+      <div class="design__text-block">
+       <h2 class="design__title title">
+        Design your personalized credit card.
+       </h2>
+       <p class="design__text">
+        You have the freedom to personalize the design of your credit card,
+        ensuring a truly unique experience that makes you feel extraordinary
+       </p>
+       <button
+        class="design__button button"
+        type="button"
+        data-modal-open-btn="modal-1"
+        aria-expanded="false">
+        Create New Card
+       </button>
+      </div>
+      <div class="design__block-card">
+       <img
+        class="design__img"
+        src="./src/images/design/card.svg"
+        alt=""
+        width="538"
+        height="492" />
+       <div
+        class="card card-design-block card-design-block--first"
+        aria-hidden="true">
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-master-card card__decor-master-card--first"
+         width="60"
+         height="35">
+         <use href="#icon-master-card"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-nfs card__decor-nfs--first"
+         width="27"
+         height="47">
+         <use href="#icon-nfs"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-chip card__decor-chip--first"
+         width="59"
+         height="48">
+         <use href="#icon-chip"></use>
+        </svg>
+        <span class="card__text-number card__text-number--first">
+         Credit Card No.
+        </span>
+        <div class="card__block-number">
+         <span class="card__number card__number--first">1602</span>
+         <span class="card__number card__number--first">0911</span>
+         <span class="card__number card__number--first">2019</span>
+         <span class="card__number card__number--first">2021</span>
+        </div>
+        <div class="card__block-text">
+         <span class="card__text card__text--first">Name</span>
+         <span class="card__text card__text--first">Exp.</span>
+         <span class="card__name card__name--first">OLEH ROZHANSKYI</span>
+         <span class="card__date card__date--first">09/11</span>
+        </div>
+       </div>
+       <div
+        class="card card-design-block card-design-block--second"
+        aria-hidden="true">
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-master-card card__decor-master-card--second"
+         width="60"
+         height="35">
+         <use href="#icon-master-card"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-nfs card__decor-nfs--second"
+         width="27"
+         height="47">
+         <use href="#icon-nfs"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-chip card__decor-chip--second"
+         width="59"
+         height="48">
+         <use href="#icon-chip"></use>
+        </svg>
+        <span class="card__text-number">Credit Card No.</span>
+        <div class="card__block-number">
+         <span class="card__number card__number--second">1602</span>
+         <span class="card__number card__number--second">0911</span>
+         <span class="card__number card__number--second">2019</span>
+         <span class="card__number card__number--second">2021</span>
+        </div>
+        <div class="card__block-text">
+         <span class="card__text">Name</span>
+         <span class="card__text">Exp.</span>
+         <span class="card__name card__name--second">OLEH ROZHANSKYI</span>
+         <span class="card__date card__date--second">09/11</span>
+        </div>
+       </div>
+       <div
+        class="card card-design-block card-design-block--third"
+        aria-hidden="true">
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-master-card card__decor-master-card--third"
+         width="60"
+         height="35">
+         <use href="#icon-master-card"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-nfs card__decor-nfs--third"
+         width="27"
+         height="47">
+         <use href="#icon-nfs"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-chip card__decor-chip--third"
+         width="59"
+         height="48">
+         <use href="#icon-chip"></use>
+        </svg>
+        <span class="card__text-number">Credit Card No.</span>
+        <div class="card__block-number">
+         <span class="card__number card__number--third">1602</span>
+         <span class="card__number card__number--third">0911</span>
+         <span class="card__number card__number--third">2019</span>
+         <span class="card__number card__number--third">2021</span>
+        </div>
+        <div class="card__block-text">
+         <span class="card__text">Name</span>
+         <span class="card__text">Exp.</span>
+         <span class="card__name card__name--third">OLEH ROZHANSKYI</span>
+         <span class="card__date card__date--third">09/11</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="main__find find">
+     <div class="find__container">
+      <div class="find__block-card">
+       <img
+        class="find__img"
+        src="./src/images/find/card.svg"
+        alt=""
+        width="457"
+        height="491" />
+       <div
+        class="card card-find-block card-find-block--first"
+        aria-hidden="true">
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-master-card card__decor-master-card--first"
+         width="60"
+         height="35">
+         <use href="#icon-master-card"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-nfs card__decor-nfs--first"
+         width="27"
+         height="47">
+         <use href="#icon-nfs"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-chip card__decor-chip--first"
+         width="59"
+         height="48">
+         <use href="#icon-chip"></use>
+        </svg>
+        <span class="card__text-number card__text-number--first">
+         Credit Card No.
+        </span>
+        <div class="card__block-number">
+         <span class="card__number card__number--first">1602</span>
+         <span class="card__number card__number--first">0911</span>
+         <span class="card__number card__number--first">2019</span>
+         <span class="card__number card__number--first">2021</span>
+        </div>
+        <div class="card__block-text">
+         <span class="card__text card__text--first">Name</span>
+         <span class="card__text card__text--first">Exp.</span>
+         <span class="card__name card__name--first">OLEH ROZHANSKYI</span>
+         <span class="card__date card__date--first">09/11</span>
+        </div>
+       </div>
+       <div
+        class="card card-find-block card-find-block--second"
+        aria-hidden="true">
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-master-card card__decor-master-card--second"
+         width="60"
+         height="35">
+         <use href="#icon-master-card"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-nfs card__decor-nfs--second"
+         width="27"
+         height="47">
+         <use href="#icon-nfs"></use>
+        </svg>
+        <svg
+         aria-hidden="true"
+         role="img"
+         class="card__decor-chip card__decor-chip--second"
+         width="59"
+         height="48">
+         <use href="#icon-chip"></use>
+        </svg>
+        <span class="card__text-number">Credit Card No.</span>
+        <div class="card__block-number">
+         <span class="card__number card__number--second">1602</span>
+         <span class="card__number card__number--second">0911</span>
+         <span class="card__number card__number--second">2019</span>
+         <span class="card__number card__number--second">2021</span>
+        </div>
+        <div class="card__block-text">
+         <span class="card__text">Name</span>
+         <span class="card__text">Exp.</span>
+         <span class="card__name card__name--second">OLEH ROZHANSKYI</span>
+         <span class="card__date card__date--second">09/11</span>
+        </div>
+       </div>
+      </div>
+      <div class="find__text-block">
+       <h2 class="find__title title">Find the Perfect Credit Card for You</h2>
+       <p class="find__text">
+        Discover your ideal credit card with ease. Our comprehensive selection
+        caters to every financial need and lifestyle. Whether you seek cashback
+        rewards, travel perks, or building credit, we have the perfect credit
+        card waiting for you. Unleash the possibilities and find the credit card
+        that fits your unique goals and aspirations.
+       </p>
+       <a href="#!" class="find__button button message">Learn More</a>
+      </div>
+     </div>
+    </section>
+    <section class="main__quote quote">
+     <div class="quote__container">
+      <h2 class="visually-hidden">Feedback from our customers</h2>
+      <div class="quote__swiper swiper">
+       <ul class="quote__list swiper-wrapper">
+        <li class="quote__li swiper-slide">
+         <blockquote class="quote__text">
+          "Great session! Dani was super helpful. She shared some practical
+          advice on how can lorem ip we go about refining our service
+          offerings."
+         </blockquote>
+         <div class="quote__author">
+          <img
+           class="quote__avatar"
+           src="./src/images/avatars/avatar-1.png"
+           alt=""
+           width="48"
+           height="48" />
+          <span class="quote__name">Hadid Khan</span>
+          <span class="quote__work">UIUX Designer</span>
+         </div>
+        </li>
+        <li class="quote__li swiper-slide">
+         <blockquote class="quote__text">
+          "It's is both attractive and highly adaptable. It's exactly what I've
+          been looking forefinitely wo lorem ipsum dolorth the investment."
+         </blockquote>
+         <div class="quote__author">
+          <img
+           class="quote__avatar"
+           src="./src/images/avatars/avatar-2.png"
+           alt=""
+           width="48"
+           height="48" />
+          <span class="quote__name">Wade Warren</span>
+          <span class="quote__work">Web Designer</span>
+         </div>
+        </li>
+        <li class="quote__li swiper-slide">
+         <blockquote class="quote__text">
+          "I am really satisfied with it. I'm good to go. It really saves me
+          time and effort. It's is exactly what our business has been lacking. "
+         </blockquote>
+         <div class="quote__author">
+          <img
+           class="quote__avatar"
+           src="./src/images/avatars/avatar-3.png"
+           alt=""
+           width="48"
+           height="48" />
+          <span class="quote__name">Jenny Wilson</span>
+          <span class="quote__work">Trust Administrator</span>
+         </div>
+        </li>
+        <li class="quote__li swiper-slide">
+         <blockquote class="quote__text">
+          "Great session! Dani was super helpful. She shared some practical
+          advice on how can lorem ip we go about refining our service
+          offerings."
+         </blockquote>
+         <div class="quote__author">
+          <img
+           class="quote__avatar"
+           src="./src/images/avatars/avatar-1.png"
+           alt=""
+           width="48"
+           height="48" />
+          <span class="quote__name">Hadid Khan</span>
+          <span class="quote__work">UIUX Designer</span>
+         </div>
+        </li>
+        <li class="quote__li swiper-slide">
+         <blockquote class="quote__text">
+          "It's is both attractive and highly adaptable. It's exactly what I've
+          been looking forefinitely wo lorem ipsum dolorth the investment."
+         </blockquote>
+         <div class="quote__author">
+          <img
+           class="quote__avatar"
+           src="./src/images/avatars/avatar-2.png"
+           alt=""
+           width="48"
+           height="48" />
+          <span class="quote__name">Wade Warren</span>
+          <span class="quote__work">Web Designer</span>
+         </div>
+        </li>
+        <li class="quote__li swiper-slide">
+         <blockquote class="quote__text">
+          "I am really satisfied with it. I'm good to go. It really saves me
+          time and effort. It's is exactly what our business has been lacking. "
+         </blockquote>
+         <div class="quote__author">
+          <img
+           class="quote__avatar"
+           src="./src/images/avatars/avatar-3.png"
+           alt=""
+           width="48"
+           height="48" />
+          <span class="quote__name">Jenny Wilson</span>
+          <span class="quote__work">Trust Administrator</span>
+         </div>
+        </li>
+       </ul>
+       <div class="quote__pagination swiper-pagination"></div>
+      </div>
+     </div>
+    </section>
+    <section class="main__faqs faqs">
+     <div class="faqs__container">
+      <h2 class="faqs__title title">FAQs</h2>
+      <ul class="faqs__list">
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         What credit score do I need to apply for a credit card?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         How can I apply for a credit card online?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         Are there any annual fees associated with the credit card?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         How long does it take to receive the credit card once approved?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         How can I check my credit card balance and transactions?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         What should I do if my credit card is lost or stolen?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+       <li class="faqs__accordion accordion">
+        <button class="accordion__btn" type="button" aria-expanded="false">
+         Is my credit card information secure?
+        </button>
+        <div class="accordion__content" aria-hidden="true">
+         <p class="accordion__text">
+          The required credit score may vary depending on the specific credit
+          card. Generally, a good to excellent credit score (typically 670 or
+          above) increases your chances of approval for premium credit cards.
+         </p>
+        </div>
+       </li>
+      </ul>
+     </div>
+    </section>
+    <section class="main__aplication aplication">
+     <div class="aplication__container">
+      <div class="aplication__text-block">
+       <h2 class="aplication__title title">Easy Way to manage your finances</h2>
+       <p class="aplication__text">
+        Easy to use mobile app that support on android and ios.
+       </p>
+       <ul class="aplication__button-block">
+        <li class="aplication__item-button">
+         <a
+          href="https://www.apple.com/app-store/"
+          class="aplication__link"
+          target="_blank">
+          <svg
+           role="img"
+           aria-label="link to install the program from app store"
+           class="aplication__svg"
+           width="123"
+           height="32">
+           <use href="#icon-app-store"></use>
+          </svg>
+         </a>
+        </li>
+        <li class="aplication__item-button">
+         <a
+          href="https://play.google.com/store/games"
+          class="aplication__link"
+          target="_blank">
+          <svg
+           role="img"
+           aria-label="link to install the program from google play"
+           class="aplication__svg"
+           width="134"
+           height="31">
+           <use href="#icon-google-play"></use>
+          </svg>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="aplication__img-block">
+       <img
+        class="aplication__img"
+        src="./src/images/aplication/phones.png"
+        alt=""
+        width="604"
+        height="851" />
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="footer">
+    <div class="footer__container">
+     <div class="footer__top">
+      <a class="footer__logo logo">
+       <img
+        class="logo__img"
+        src="./src/images/common/header-logo.svg"
+        alt=""
+        width="24"
+        height="24" />
+       <span class="logo__span">GreenBank</span>
+      </a>
+      <p class="footer__text">
+       Discover the power of our secure and rewarding credit cards
+      </p>
+     </div>
+     <ul class="footer__list">
+      <li class="footer__li">
+       <a href="#!" class="footer__link">About us</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Investors</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Features</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Book a demo</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Security</a>
+      </li>
+     </ul>
+     <ul class="footer__list">
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Products</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Credits Cards</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Gift Cards</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Savings accounts</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">NFT</a>
+      </li>
+     </ul>
+     <ul class="footer__list">
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Useful Links</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Free rewards</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Documentation</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Affiliate program</a>
+      </li>
+     </ul>
+     <ul class="footer__list">
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Social</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Changelog</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">License</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">Site Maps</a>
+      </li>
+      <li class="footer__li">
+       <a href="#!" class="footer__link">News</a>
+      </li>
+     </ul>
+    </div>
+   </footer>
+  </div>
+  <div class="modals">
+   <div class="modals__overlay">
+    <div class="modals__item" data-modal-window="modal-1" aria-hidden="true">
+     <div class="modals__header">
+      <h2 class="modals__title">Contact us</h2>
+      <button type="button" class="modals-btn-close" aria-expanded="false">
+       <span class="visually-hidden">close modal window</span>
+      </button>
+     </div>
+     <form class="form" action="#" method="post">
+      <label for="email">
+       <span class="visually-hidden">enter your email</span>
+      </label>
+      <input
+       id="email"
+       name="user-email"
+       type="email"
+       placeholder="Email"
+       class="form__input"
+       aria-required="true"
+       required />
+      <button class="form__btn button" type="button">Send</button>
+      <span class="form__span">* enter your email and we connect you</span>
+     </form>
+    </div>
+    <!-- <div class="modals__item" data-modal-window="modal-2" aria-hidden="true">
+				<div class="modals__header">
+					<h2 class="modals__title">Login 2</h2>
+					<button type="button" class="modals-btn-close"><span class="visually-hidden">close modal window</span></button>
+				</div>
+				<form class="form" action="#" method="post">
+					<label for="name"><span class="visually-hidden">enter login</span></label>
+					<input id="name" name="user-login" type="text" placeholder="Login" class="form__input">
+					<label for="password-user"><span class="visually-hidden">enter password</span></label>
+					<input id="password-user" name="user-password" type="password" placeholder="password" class="form__input">
+					<button class="form__btn" type="button">Login</button>
+				</form>
+				<a href="#!" class="modals__link">Forgot your password?</a>
+			</div> -->
+   </div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+ </body>
+</html>

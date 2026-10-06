@@ -1,11 +1,8 @@
+.DS_Store
+.idea
+.vscode
+dist
 node_modules
-info.txt
-package.json
-package-lock.json
-sharp.config.json
 project_info
-serve
-.parcelrc
-.parcel-cache
-.stylelintrc.json
---no-source-maps
+info.txt
+workspace.code-workspace

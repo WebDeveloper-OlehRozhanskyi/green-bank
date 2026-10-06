@@ -1,0 +1,21 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+:root {
+ --white: #fff;
+ --text-color: #adb2b1;
+ --brand-color: #2bb32a;
+ --bg: #151d16;
+ --font-family: 'MPLUS1';
+ --font-family-code: 'MPLUS1-code';
+ --padding-inline: #{rem(70)};
+ --transition: 0.3s;
+
+ @media (width <= rem($l)) {
+  --padding-inline: #{rem(32)};
+ }
+
+ @media (width <= rem($bm)) {
+  --padding-inline: #{rem(16)};
+ }
+}

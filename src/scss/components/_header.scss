@@ -1,212 +1,207 @@
+@use 'foundation' as *;
+
 .header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100;
-	width: 100%;
-	transition: background-color var(--transition);
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 100;
+ width: 100%;
+ transition: background-color var(--transition);
 
-	&.header-scrolling {
-		// js off
-	}
+ &.header-scrolling {
+  // js off
+ }
 
-	@include t {
-		&::before {
-			position: absolute;
-			z-index: 200;
-			background-color: var(--bg);
-			transform: translate(100%);
-			transition: transform var(--transition);
-			inset: 0;
-			content: "";
-		}
-	}
+ @include t {
+  &::before {
+   position: absolute;
+   inset: 0;
+   z-index: 200;
+   background-color: var(--bg);
+   transform: translate(100%);
+   transition: transform var(--transition);
+   content: '';
+  }
+ }
 
-	// .header__container
-	&__container {
-		@include container;
+ // .header__container
+ &__container {
+  @include container;
 
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		min-height: 110px;
-		border-radius: 0 0 20px 20px;
-		transition: all var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: rem(110);
+  border-radius: 0 0 rem(20) rem(20);
+  transition: all var(--transition);
 
-		&.header-scrolling {
-			min-height: 60px;
-			background-color: var(--bg);
-		}
+  &.header-scrolling {
+   min-height: rem(60);
+   background-color: var(--bg);
+  }
 
-		@include m {
-			min-height: 90px;
-		}
-	}
+  @include bm {
+   min-height: rem(90);
+  }
+ }
 
-	// .header__active
-	&__active {
-		display: flex;
-		align-items: center;
-		column-gap: 32px;
-	}
+ // .header__active
+ &__active {
+  display: flex;
+  align-items: center;
+  column-gap: rem(32);
+ }
 
-	// .header__button
-	&__button {
-		position: relative;
-		z-index: 300;
-		min-height: 48px;
-		color: var(--brand-color);
-		font-weight: 700;
-		font-size: inherit;
-		font-family: inherit;
-		background-color: transparent;
-		border: 2px solid var(--brand-color);
-		border-radius: 64px;
-		padding-inline: 32px;
-		cursor: pointer;
-		transition:
-			background-color var(--transition),
-			color var(--transition);
+ // .header__button
+ &__button {
+  position: relative;
+  z-index: 300;
+  min-height: rem(48);
+  padding-inline: rem(32);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--brand-color);
+  background-color: transparent;
+  border: 2px solid var(--brand-color);
+  border-radius: rem(64);
+  transition:
+   background-color var(--transition),
+   color var(--transition);
+  cursor: pointer;
 
-		&:hover {
-			@media (any-hover) {
-				color: var(--white);
-				background-color: var(--brand-color);
-			}
-		}
+  @include hover {
+   color: var(--white);
+   background-color: var(--brand-color);
+  }
 
-		@include sm {
-			display: none;
-		}
+  @include m {
+   display: none;
+  }
 
-		&--menu {
-			display: block;
+  // .header__button--menu
+  &--menu {
+   display: block;
 
-			@media (width >= 574.98px) {
-				display: none;
-			}
-		}
-	}
+   @media (width >= rem($m)) {
+    display: none;
+   }
+  }
+ }
 }
 
 .menu-active.header::before {
-	transform: translate(0);
+ transform: translate(0);
 }
 
 // .header__menu
 .menu {
-	@include t {
-		position: fixed;
-		z-index: 200;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 150px 0 30px;
-		overflow-y: auto;
-		background-color: var(--bg);
-		transform: translateX(100%);
-		transition: transform var(--transition);
-		inset: 0;
-	}
+ @include t {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  padding: rem(150) 0 rem(30);
+  background-color: var(--bg);
+  transform: translateX(100%);
+  transition: transform var(--transition);
+ }
 
-	&.menu-active {
-		transform: translateX(0);
-	}
+ &.menu-active {
+  transform: translateX(0);
+ }
 
-	// .menu__list
-	&__list {
-		@include list;
+ // .menu__list
+ &__list {
+  @include list;
 
-		display: flex;
-		align-items: center;
-		column-gap: 32px;
+  display: flex;
+  align-items: center;
+  column-gap: rem(32);
 
-		@include t {
-			flex-flow: column nowrap;
-			align-items: center;
-			justify-content: flex-start;
-			margin-bottom: 30px;
-			row-gap: 32px;
-		}
-	}
+  @include t {
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   row-gap: rem(32);
+   margin-bottom: rem(30);
+  }
+ }
 
-	// .menu__link
-	&__link {
-		@include link;
+ // .menu__link
+ &__link {
+  @include link;
+  @include hover-line;
 
-		position: relative;
-		display: inline-block;
-		color: var(--white);
-		font-weight: 500;
-		padding-block: 12px;
-		line-height: 1;
-		white-space: nowrap;
-		text-transform: capitalize;
+  position: relative;
+  display: inline-block;
+  padding-block: rem(12);
+  font-weight: 500;
+  line-height: 1;
+  text-transform: capitalize;
+  white-space: nowrap;
+  color: var(--white);
 
-		@include hover;
-
-		@include t {
-			font-size: 24px;
-		}
-	}
+  @include t {
+   font-size: rem(24);
+  }
+ }
 }
 
 .burger-btn {
-	display: none;
+ display: none;
 
-	@include t {
-		position: relative;
-		z-index: 300;
-		display: block;
-		width: 44px;
-		height: 44px;
-		background-color: transparent;
-		border: 0;
+ @include t {
+  position: relative;
+  z-index: 300;
+  display: block;
+  width: rem(44);
+  height: rem(44);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 
-		&:hover {
-			@media (any-hover) {
-				cursor: pointer;
-			}
-		}
+  span,
+  &::before,
+  &::after {
+   position: absolute;
+   right: rem(7);
+   width: rem(30);
+   height: rem(2);
+   background-color: var(--brand-color);
+   transition: all 0.3s ease 0s;
+   content: '';
+  }
 
-		span,
-		&::before,
-		&::after {
-			position: absolute;
-			right: 7px;
-			width: 30px;
-			height: 2px;
-			background-color: var(--brand-color);
-			transition: all 0.3s ease 0s;
-			content: "";
-		}
+  &::before {
+   top: rem(10);
+  }
 
-		&::before {
-			top: 10px;
-		}
+  &::after {
+   bottom: rem(10);
+  }
 
-		&::after {
-			bottom: 10px;
-		}
+  span {
+   top: calc(50% - #{rem(1)});
+  }
+ }
 
-		span {
-			top: calc(50% - 1px);
-		}
-	}
+ &.menu-active {
+  span {
+   width: 0;
+  }
 
-	&.menu-active {
-		span {
-			width: 0;
-		}
+  &::before {
+   top: calc(50% - #{rem(1)});
+   transform: rotate(-45deg);
+  }
 
-		&::before {
-			top: calc(50% - 1px);
-			transform: rotate(-45deg);
-		}
-
-		&::after {
-			bottom: calc(50% - 1px);
-			transform: rotate(45deg);
-		}
-	}
+  &::after {
+   bottom: calc(50% - #{rem(1)});
+   transform: rotate(45deg);
+  }
+ }
 }

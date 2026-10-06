@@ -1,0 +1,134 @@
+@use '../foundation' as *;
+
+.banner {
+ // .banner__container
+ &__container {
+  @include container;
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: rem(32);
+
+  @include bt {
+   flex-direction: column;
+   row-gap: rem(32);
+  }
+
+  &::before {
+   position: absolute;
+   top: rem(61);
+   left: rem(60);
+   width: rem(359);
+   height: rem(110);
+   background: url('@/images/banner/banner-decor.svg') 0 0 no-repeat;
+   content: '';
+
+   @include t {
+    display: none;
+   }
+  }
+ }
+
+ // .banner__text-block
+ &__text-block {
+  display: flex;
+  flex-basis: 45%;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: rem(32);
+
+  @include bt {
+   flex-basis: auto;
+  }
+ }
+
+ // .banner__title
+ &__title {
+  @include margin-block;
+
+  font-size: clamp(rem(38), vw(56, $t), rem(56));
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--white);
+
+  @include bt {
+   max-width: 70vw;
+  }
+
+  @include t {
+   max-width: 80vw;
+  }
+
+  @include bm {
+   max-width: 100vw;
+  }
+ }
+
+ // .banner__text
+ &__text {
+  @include margin-block;
+
+  max-width: rem(498);
+ }
+
+ // .banner__button
+ &__button {
+  &::after {
+   display: none;
+  }
+ }
+
+ // .banner__img-card
+ &__img-card {
+  display: none;
+  align-self: flex-end;
+  backdrop-filter: blur(rem(75));
+
+  @include bm {
+   @include image;
+  }
+ }
+}
+
+.users-banner {
+ display: grid;
+ align-items: center;
+ grid-template-columns: auto 1fr;
+ column-gap: rem(16);
+ max-width: rem(313);
+
+ // .users-banner__block-img
+ &__block-img {
+  display: flex;
+  grid-column: 1/2;
+  grid-row: 1/3;
+
+  // перекриття аватарок без :not(:first-child) — у збірці кожен <img>
+  // обгорнутий у власний <picture> і завжди є першим нащадком
+  padding-left: rem(13);
+ }
+
+ // .users-banner__img
+ &__img {
+  width: rem(48);
+  aspect-ratio: 1;
+  margin-left: rem(-13);
+ }
+
+ // .users-banner__number
+ &__number {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-weight: 700;
+  color: var(--white);
+ }
+
+ // .users-banner__text
+ &__text {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: rem(12);
+ }
+}

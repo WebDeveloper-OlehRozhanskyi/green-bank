@@ -1,0 +1,112 @@
+@use '../foundation' as *;
+
+.aplication {
+ // .aplication__container
+ &__container {
+  @include container;
+
+  position: relative;
+  display: flex;
+  gap: rem(32);
+  overflow: hidden;
+
+  @include bm {
+   flex-direction: column;
+  }
+ }
+
+ // .aplication__text-block
+ &__text-block {
+  flex-basis: rem(604);
+  padding-block: clamp(rem(50), vw(110), rem(110));
+
+  @include bm {
+   flex-basis: auto;
+   padding-block: 0;
+  }
+ }
+
+ // .aplication__title
+ &__title {
+  @include margin-block;
+
+  margin-bottom: rem(20);
+  font-size: clamp(rem(34), vw(48, $t), rem(48));
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: -0.01em;
+  color: var(--white);
+ }
+
+ // .aplication__text
+ &__text {
+  @include margin-block;
+
+  margin-bottom: rem(32);
+  font-size: rem(18);
+ }
+
+ // .aplication__button-block
+ &__button-block {
+  @include list;
+
+  display: flex;
+  column-gap: rem(24);
+ }
+
+ // .aplication__item-button
+ &__item-button {
+  display: flex;
+  align-items: center;
+  background-color: #3d544d;
+  border-radius: rem(16);
+  transition: background-color var(--transition);
+
+  @include hover {
+   background-color: var(--brand-color);
+  }
+ }
+
+ // .aplication__link
+ &__link {
+  @include link;
+
+  padding: rem(16);
+  color: var(--white);
+ }
+
+ // .aplication__svg
+ &__svg {
+  @include image;
+
+  fill: currentcolor;
+ }
+
+ // .aplication__img-block
+ &__img-block {
+  position: absolute;
+  top: 0;
+  right: var(--padding-inline);
+  width: 40%;
+
+  @include t {
+   position: relative;
+   top: auto;
+   right: auto;
+   width: 48.7%;
+  }
+
+  @include m {
+   width: 70%;
+  }
+
+  @include bm {
+   align-self: center;
+  }
+ }
+
+ // .aplication__img
+ &__img {
+  @include image;
+ }
+}

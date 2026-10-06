@@ -1,44 +1,41 @@
 export function scrollEffect() {
+ document.addEventListener('scroll', function () {
+  const targetElement = document.querySelector('.design__block-card')
 
-	document.addEventListener('scroll', function () {
-		const targetElement = document.querySelector('.design__block-card');
+  const elementPosition = targetElement.getBoundingClientRect().bottom
 
-		const elementPosition = targetElement.getBoundingClientRect().bottom;
+  const windowHeight = window.innerHeight
 
-		const windowHeight = window.innerHeight;
+  const viewportMiddle = windowHeight * 0.9
 
-		const viewportMiddle = windowHeight * 0.9;
+  if (
+   Math.abs(elementPosition - viewportMiddle) < 10 ||
+   elementPosition < viewportMiddle
+  ) {
+   targetElement.classList.add('active')
+  }
+ })
+}
 
-		if (Math.abs(elementPosition - viewportMiddle) < 10 || elementPosition < viewportMiddle) {
-			targetElement.classList.add('active');
-		}
-	});
+scrollEffect()
 
-};
+export function scrollEffect2() {
+ document.addEventListener('scroll', function () {
+  const targetElement = document.querySelector('.find__block-card')
 
-scrollEffect();
+  const elementPosition = targetElement.getBoundingClientRect().bottom
 
-export function scrollEffect_2() {
-	document.addEventListener('scroll', function () {
-		const targetElement = document.querySelector('.find__block-card');
+  const windowHeight = window.innerHeight
 
-		const elementPosition = targetElement.getBoundingClientRect().bottom;
+  const viewportMiddle = windowHeight * 0.9
 
-		const windowHeight = window.innerHeight;
+  if (
+   Math.abs(elementPosition - viewportMiddle) < 10 ||
+   elementPosition < viewportMiddle
+  ) {
+   targetElement.classList.add('active')
+  }
+ })
+}
 
-		const viewportMiddle = windowHeight * 0.9;
-
-		if (Math.abs(elementPosition - viewportMiddle) < 10 || elementPosition < viewportMiddle) {
-			targetElement.classList.add('active');
-		}
-	});
-};
-
-scrollEffect_2();
-
-
-
-
-
-
-
+scrollEffect2()

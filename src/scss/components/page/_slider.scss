@@ -1,0 +1,38 @@
+@use '../foundation' as *;
+
+.slider {
+ // .slider__container
+ &__container {
+  @include container;
+
+  position: relative;
+  min-height: rem(32);
+ }
+
+ // .slider__list
+ &__list {
+  @include list;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(32);
+  overflow-x: auto;
+  min-height: rem(32);
+  padding-block: rem(64);
+
+  @include bm {
+   padding-block: rem(50);
+  }
+ }
+
+ // .slider__li
+ &__li {
+  flex-shrink: 0;
+ }
+
+ // .slider__img
+ &__img {
+  @include image;
+ }
+}

@@ -1,0 +1,97 @@
+@use '../foundation' as *;
+
+.find {
+ // .find__container
+ &__container {
+  @include container;
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: rem(32);
+
+  &::before {
+   position: absolute;
+   bottom: 5%;
+   left: 30%;
+   width: rem(280);
+   aspect-ratio: 1;
+   background: url('@/images/common/star.svg') 0 0 no-repeat;
+   transform: rotate(-24deg);
+   content: '';
+
+   @include t {
+    display: none;
+   }
+  }
+
+  @include bm {
+   flex-direction: column-reverse;
+   align-items: center;
+   row-gap: rem(32);
+  }
+ }
+
+ // .find__block-card
+ &__block-card {
+  position: relative;
+  flex-basis: rem(551);
+  transform-style: preserve-3d;
+  perspective: rem(1000);
+
+  @include bm {
+   flex-basis: auto;
+  }
+
+  @include hover {
+   .card--find-block {
+    animation-play-state: running;
+   }
+  }
+ }
+
+ // .find__img
+ &__img {
+  display: none;
+
+  @include l {
+   @include image;
+  }
+ }
+
+ // .find__text-block
+ &__text-block {
+  display: flex;
+  flex-basis: rem(604);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: rem(24);
+
+  @include bm {
+   flex-basis: auto;
+  }
+ }
+
+ // .find__text
+ &__text {
+  @include margin-block;
+ }
+
+ // .find__button
+ &__button {
+  padding-right: rem(32);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+
+  &::before {
+   display: none;
+  }
+
+  @include hover {
+   background-color: var(--bg);
+   border: 2px solid var(--brand-color);
+  }
+ }
+}

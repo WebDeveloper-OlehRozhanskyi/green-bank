@@ -1,62 +1,64 @@
+@use 'foundation' as *;
+
 .accordion {
-	position: relative;
-	padding-right: 40px;
-	border-bottom: 1px solid var(--text-color);
+ position: relative;
+ padding-right: rem(40);
+ border-bottom: 1px solid var(--text-color);
 
-	&::before,
-	&::after {
-		position: absolute;
-		top: 35px;
-		right: 6px;
-		width: 16px;
-		height: 2px;
-		background-color: var(--text-color);
-		transition: transform var(--transition);
-		content: "";
-	}
+ &::before,
+ &::after {
+  position: absolute;
+  top: rem(35);
+  right: rem(6);
+  width: rem(16);
+  height: rem(2);
+  background-color: var(--text-color);
+  transition: transform var(--transition);
+  content: '';
+ }
 
-	&::after {
-		transform: rotate(90deg);
-	}
+ &::after {
+  transform: rotate(90deg);
+ }
 
-	// .accordion__btn
-	&__btn {
-		width: 100%;
-		padding-inline: 0;
-		padding-block: clamp(16px, vwt(24px), 24px);
-		color: var(--white);
-		font-weight: 700;
-		font-size: clamp(18px, vwt(24px), 24px);
-		font-family: inherit;
-		text-align: left;
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-	}
+ // .accordion__btn
+ &__btn {
+  width: 100%;
+  padding-inline: 0;
+  padding-block: clamp(rem(16), vw(24, $t), rem(24));
+  font-family: inherit;
+  font-size: clamp(rem(18), vw(24, $t), rem(24));
+  font-weight: 700;
+  text-align: left;
+  color: var(--white);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+ }
 
-	// .accordion__content
-	&__content {
-		max-height: 0;
-		padding-bottom: 0;
-		overflow: hidden;
-		opacity: 0;
-		transition: all var(--transition);
-		will-change: max-height;
+ // .accordion__content
+ &__content {
+  overflow: hidden;
+  max-height: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transition: all var(--transition);
+  will-change: max-height;
 
-		.accordion-active & {
-			padding-bottom: 20px;
-			opacity: 1;
-		}
-	}
+  .accordion-active & {
+   padding-bottom: rem(20);
+   opacity: 1;
+  }
+ }
 
-	// .accordion__text
-	&__text {
-		@include margin-block;
-	}
+ // .accordion__text
+ &__text {
+  @include margin-block;
+ }
 }
 
 .accordion-active {
-	&::after {
-		transform: rotate(0deg);
-	}
+ &::after {
+  transform: rotate(0deg);
+ }
 }

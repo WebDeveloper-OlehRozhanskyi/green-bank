@@ -1,111 +1,89 @@
-:root {
-	--white: #fff;
-	--text-color: #adb2b1;
-	--brand-color: #2bb32a;
-	--bg: #151d16;
-	--font-family: "MPLUS1";
-	--font-family-code: "MPLUS1-code";
-	--padding-inline: 70px;
-	--transition: 0.3s;
-
-	@include canvas {
-		--padding-inline: 32px;
-	}
-
-	@include m {
-		--padding-inline: 16px;
-	}
-}
+@use 'foundation' as *;
 
 html {
-	scroll-padding-top: 60px;
-	scrollbar-width: thin; /* Може бути auto, thin або none */
-	scrollbar-color: var(--brand-color) var(--bg);
+ scroll-padding-top: rem(60);
+ scrollbar-color: var(--brand-color) var(--bg);
+ scrollbar-width: thin; /* Може бути auto, thin або none */
 }
 
 .body {
-	position: relative;
-	min-height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow-x: clip;
-	color: var(--text-color);
-	font-weight: 400;
-	font-size: 16px;
-	font-family: var(--font-family), sans-serif;
-	line-height: 1.5;
-	background-color: #1a1e1c;
-	border: 0;
+ position: relative;
+ overflow-x: clip;
+ min-height: 100%;
+ margin: 0;
+ padding: 0;
+ font-family: var(--font-family), sans-serif;
+ font-size: rem(16);
+ font-weight: 400;
+ line-height: 1.5;
+ color: var(--text-color);
+ background-color: #1a1e1c;
+ border: 0;
 
-	&.menu-active {
-		padding-right: 7px;
-		overflow-y: hidden;
+ // компенсація смуги прокрутки не потрібна: html має scrollbar-gutter: stable
+ &.menu-active {
+  overflow-y: hidden;
+ }
 
-		@include m {
-			padding-right: 4px;
-		}
-	}
+ &::before {
+  @include bg-image-set('@/images/background/site-bg', 'jpg', false);
 
-	&::before {
-		position: absolute;
-		z-index: -1;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		background-image: image-set(
-			url("../img/site_bg.jpg?as=avif") type("image/avif"),
-			url("../img/site_bg.jpg?as=webp") type("image/webp"),
-			url("../img/site_bg.jpg") type("image/jpeg")
-		);
-		background-repeat: no-repeat;
-		background-position: center -150px;
-		background-size: cover;
-		content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-position: center rem(-150);
+  content: '';
 
-		@include t {
-			display: none;
-		}
-	}
+  @include t {
+   display: none;
+  }
+ }
+}
+
+:focus-visible {
+ outline: 2px solid var(--brand-color);
+ outline-offset: 3px;
+}
+
+// htmlImgToPicture у збірці обгортає <img> у <picture>; display: contents
+// прибирає обгортку з розкладки, і flex/grid-стилі для <img> працюють так само
+picture {
+ display: contents;
 }
 
 .visually-hidden {
-	position: absolute !important;
-	width: 1px !important;
-	height: 1px !important;
-	margin: -1px !important;
-	padding: 0 !important;
-	overflow: hidden !important;
-	white-space: nowrap !important;
-	border: 0 !important;
-	clip: rect(0 0 0 0) !important;
-	clip-path: inset(100%) !important;
+ position: absolute !important;
+ overflow: hidden !important;
+ clip-path: inset(50%) !important;
+ width: 1px !important;
+ height: 1px !important;
+ margin: 1px !important;
+ padding: 0 !important;
+ white-space: nowrap !important;
+ border: 0 !important;
+
+ // prettier-ignore
+ clip: rect(0 0 0 0)!important; /* stylelint-disable-line property-no-deprecated */
 }
 
 /* Загальний стиль для всіх веб-кіт браузерів */
 ::-webkit-scrollbar {
-	width: 7px;
-	height: 4px; /* Ширина смужки прокрутки */
+ width: rem(7);
+ height: rem(4); /* Ширина смужки прокрутки */
 
-	@include m {
-		width: 4px;
-	}
+ @include bm {
+  width: rem(4);
+ }
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--bg); /* Колір треку */
+ background: var(--bg); /* Колір треку */
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--brand-color); /* Колір смужки прокрутки */
-	border: none; /* Простір між смужкою і треком  */
-	border-radius: 10px; /* Округлені краї смужки прокрутки */
+ background-color: var(--brand-color); /* Колір смужки прокрутки */
+ border: none; /* Простір між смужкою і треком  */
+ border-radius: rem(10); /* Округлені краї смужки прокрутки */
 }
-
-// ::-webkit-scrollbar-thumb:hover {
-// 	background-color: var(--brand-color); /* Колір смужки при наведенні */
-// }
-
-/* 
-запобігти скачку контента при появі полоси прокрутки
-.body { padding: 0 calc(20px - (100vw - 100%)) 0 0; }
-*/

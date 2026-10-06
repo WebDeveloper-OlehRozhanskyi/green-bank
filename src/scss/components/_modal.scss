@@ -1,137 +1,140 @@
+@use 'foundation' as *;
+
 .modals {
-	&__overlay {
-		position: fixed;
-		z-index: 900;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100vw;
-		height: 100vh;
-		overflow: hidden;
-		background-color: #000000b3;
-		visibility: hidden;
-		opacity: 0;
-		transition: all 0.3s ease-in-out;
-		inset: 0;
+ // .modals__overlay
+ &__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000b3;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 
-		&--visible {
-			visibility: visible;
-			cursor: pointer;
-			opacity: 1;
-		}
-	}
+  &--visible {
+   visibility: visible;
+   opacity: 1;
+   cursor: pointer;
+  }
+ }
 
-	&__item {
-		position: relative;
-		display: none;
-		flex-direction: column;
-		max-width: 90%;
-		padding: 32px 24px;
-		background-color: var(--bg);
-		row-gap: 32px;
-		border: 2px solid var(--brand-color);
-		border-radius: 20px;
+ // .modals__item
+ &__item {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  row-gap: rem(32);
+  max-width: 90%;
+  padding: rem(32) rem(24);
+  background-color: var(--bg);
+  border: 2px solid var(--brand-color);
+  border-radius: rem(20);
 
-		&--visible {
-			display: flex;
-			cursor: default;
-		}
-	}
+  &--visible {
+   display: flex;
+   cursor: default;
+  }
+ }
 
-	&__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+ // .modals__header
+ &__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
 
-	&__title {
-		@include margin-block;
+ // .modals__title
+ &__title {
+  @include margin-block;
 
-		font-weight: 400;
-		font-size: 32px;
-	}
+  font-size: rem(32);
+  font-weight: 400;
+ }
 
-	&__link {
-		@include link;
+ // .modals__link
+ &__link {
+  @include link;
+  @include hover-line;
 
-		position: relative;
-		align-self: center;
+  position: relative;
+  align-self: center;
 
-		@include hover;
-
-		&::before {
-			bottom: -5px;
-		}
-	}
+  &::before {
+   bottom: rem(-5);
+  }
+ }
 }
 
 .form {
-	display: flex;
-	flex-direction: column;
+ display: flex;
+ flex-direction: column;
 
-	// .form__input
-	&__input {
-		@include input;
+ // .form__input
+ &__input {
+  @include form;
 
-		min-height: 59px;
-		margin-bottom: 20px;
-		padding: 12px;
-		color: #000;
-		border: 1px solid var(--black);
-		border-radius: 32px;
-	}
+  min-height: rem(59);
+  margin-bottom: rem(20);
+  padding: rem(12);
+  color: #000;
+  border: 1px solid var(--black);
+  border-radius: rem(32);
+ }
 
-	// .form__btn
-	&__btn {
-		margin-bottom: 20px;
-		padding-right: 32px;
-		border: 2px solid transparent;
-		transition: all var(--transition);
+ // .form__btn
+ &__btn {
+  margin-bottom: rem(20);
+  padding-right: rem(32);
+  border: 2px solid transparent;
+  transition: all var(--transition);
 
-		&::before {
-			display: none;
-		}
+  &::before {
+   display: none;
+  }
 
-		&:hover {
-			@media (any-hover) {
-				background-color: var(--bg);
-				border: 2px solid var(--brand-color);
-			}
-		}
-	}
+  @include hover {
+   background-color: var(--bg);
+   border: 2px solid var(--brand-color);
+  }
+ }
 }
 
 .modals-btn-close {
-	@include button;
+ @include button;
 
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	width: 44px;
-	height: 44px;
-	padding: 12px;
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
+ position: absolute;
+ top: rem(5);
+ right: rem(5);
+ width: rem(44);
+ height: rem(44);
+ padding: rem(12);
+ background-color: transparent;
+ border: none;
 
-	&::before,
-	&::after {
-		position: absolute;
-		right: 7px;
-		display: block;
-		width: 30px;
-		height: 2px;
-		background-color: var(--brand-color);
-		content: "";
-	}
+ &::before,
+ &::after {
+  position: absolute;
+  right: rem(7);
+  display: block;
+  width: rem(30);
+  height: rem(2);
+  background-color: var(--brand-color);
+  content: '';
+ }
 
-	&::before {
-		top: calc(50% - 1px);
-		transform: rotate(-45deg);
-	}
+ &::before {
+  top: calc(50% - #{rem(1)});
+  transform: rotate(-45deg);
+ }
 
-	&::after {
-		bottom: calc(50% - 1px);
-		transform: rotate(45deg);
-	}
+ &::after {
+  bottom: calc(50% - #{rem(1)});
+  transform: rotate(45deg);
+ }
 }
